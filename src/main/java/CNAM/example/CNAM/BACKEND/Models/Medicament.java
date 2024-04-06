@@ -12,31 +12,34 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Actes")
+@Table(name = "Medicaments")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Acte {
+public class Medicament {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Code")
-    private String code;
+    private Long code;
 
-    @Column(name = "Lettre")
-    private String lettre;
+    @Column(name = "Libelle")
+    private String libelle;
 
-    @Column(name = "Designation")
-    private String designation;
+    @Column(name = "Prix")
+    private Double prix;
 
-    @Column(name = "Cotation")
-    private Integer cotation;
+    @Column(name = "PrixPrevisionnelCnam")
+    private Double prixPrevisionnelCnam;
 
-    @Column(name = "PrixUnite")
-    private Integer prixunite;
+    @Column(name = "Categorie")
+    private String categorie;
+
+    @Column(nullable = true, name = "Conventionne")
+    private Boolean conventionne;
 
     @Column(name = "Actif")
-    private Integer actif; 
+    private Boolean actif;
 
-
+   
 }

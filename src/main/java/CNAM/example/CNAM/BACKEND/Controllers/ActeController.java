@@ -10,6 +10,7 @@ import CNAM.example.CNAM.BACKEND.Repositories.ActeRepository;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -48,6 +49,7 @@ public class ActeController {
         acte.setDesignation(acteDetails.getDesignation());
         acte.setCotation(acteDetails.getCotation());
         acte.setPrixunite(acteDetails.getPrixunite());
+        acte.setActif(acteDetails.getActif()); // Ajout de l'activation
 
         final Acte updatedActe = acteRepository.save(acte);
         return ResponseEntity.ok(updatedActe);
