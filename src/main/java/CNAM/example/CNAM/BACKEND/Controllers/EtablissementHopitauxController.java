@@ -8,9 +8,6 @@ import CNAM.example.CNAM.BACKEND.Models.EtablissementHopitaux;
 import CNAM.example.CNAM.BACKEND.Repositories.EtablissementHopitauxRepository;
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -39,6 +36,7 @@ public class EtablissementHopitauxController {
         return new ResponseEntity<>(createdEtablissementHopitaux, HttpStatus.CREATED);
     }
 
+<<<<<<< HEAD
     @PutMapping("/etablissements/{code}")
     public ResponseEntity<EtablissementHopitaux> updateEtablissementHopitaux(@PathVariable Long code,
                                                                              @RequestBody EtablissementHopitaux etablissementHopitauxDetails) {
@@ -71,4 +69,7 @@ public class EtablissementHopitauxController {
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+=======
+   
+>>>>>>> 5e9516f6812b6960cd172ee834884bd1634baa41
 }

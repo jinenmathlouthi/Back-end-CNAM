@@ -8,8 +8,7 @@ import CNAM.example.CNAM.BACKEND.Models.Acte;
 import CNAM.example.CNAM.BACKEND.Repositories.ActeRepository;
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+
 
 @CrossOrigin("*")
 @RestController
@@ -44,6 +43,7 @@ public class ActeController {
         return new ResponseEntity<>(createdActe, HttpStatus.CREATED);
     }
 
+<<<<<<< HEAD
     @PutMapping("/actes/{id}")
     public ResponseEntity<Acte> updateActe(@PathVariable(value = "id") String acteId,
                                            @RequestBody Acte acteDetails) {
@@ -75,4 +75,7 @@ public class ActeController {
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+=======
+    
+>>>>>>> 5e9516f6812b6960cd172ee834884bd1634baa41
 }

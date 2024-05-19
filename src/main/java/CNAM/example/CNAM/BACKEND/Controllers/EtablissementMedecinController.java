@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import CNAM.example.CNAM.BACKEND.Models.EtablissementMedecin;
 import CNAM.example.CNAM.BACKEND.Repositories.EtablissementMedecinRepository;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -38,6 +35,7 @@ public class EtablissementMedecinController {
         return new ResponseEntity<>(createdEtablissementMedecin, HttpStatus.CREATED);
     }
 
+<<<<<<< HEAD
     @PutMapping("/etablissements-medecin/{code}")
     public ResponseEntity<EtablissementMedecin> updateEtablissementMedecin(@PathVariable Long code, @RequestBody EtablissementMedecin etablissementMedecinDetails) {
         EtablissementMedecin etablissementMedecin = etablissementMedecinRepository.findByCode(code);
@@ -71,4 +69,7 @@ public class EtablissementMedecinController {
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+=======
+    
+>>>>>>> 5e9516f6812b6960cd172ee834884bd1634baa41
 }

@@ -8,9 +8,6 @@ import CNAM.example.CNAM.BACKEND.Models.Medicament;
 import CNAM.example.CNAM.BACKEND.Repositories.MedicamentRepository;
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -37,36 +34,5 @@ public class MedicamentController {
         return new ResponseEntity<>(createdMedicament, HttpStatus.CREATED);
     }
 
-    @PutMapping("/medicaments/{id}")
-    public ResponseEntity<Medicament> updateMedicament(@PathVariable(value = "id") Long medicamentId,
-                                                       @RequestBody Medicament medicamentDetails) {
-        Medicament medicament = medicamentRepository.findByCode(medicamentId);
-        if (medicament == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        medicament.setCode(medicamentDetails.getCode());
-        medicament.setLibelle(medicamentDetails.getLibelle());
-        medicament.setPrix(medicamentDetails.getPrix());
-        medicament.setPrixPrevisionnelCnam(medicamentDetails.getPrixPrevisionnelCnam());
-        medicament.setCategorie(medicamentDetails.getCategorie());
-        medicament.setConventionne(medicamentDetails.getConventionne());
-        medicament.setActif(medicamentDetails.getActif());
-
-        final Medicament updatedMedicament = medicamentRepository.save(medicament);
-        return ResponseEntity.ok(updatedMedicament);
-    }
-
-    @DeleteMapping("/medicaments/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteMedicament(@PathVariable(value = "id") Long medicamentId) {
-        Medicament medicament = medicamentRepository.findByCode(medicamentId);
-        if (medicament == null) {
-            return ResponseEntity.notFound().build();
-        }
-
-        medicamentRepository.delete(medicament);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
-    }
+   
 }
