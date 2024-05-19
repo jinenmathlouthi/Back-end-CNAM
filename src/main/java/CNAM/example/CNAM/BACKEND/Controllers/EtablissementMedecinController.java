@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import CNAM.example.CNAM.BACKEND.Models.EtablissementMedecin;
 import CNAM.example.CNAM.BACKEND.Repositories.EtablissementMedecinRepository;
-
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -46,13 +45,15 @@ public class EtablissementMedecinController {
             return ResponseEntity.notFound().build();
         }
 
-        // Mise à jour des détails de l'établissement
         etablissementMedecin.setLibelle(etablissementMedecinDetails.getLibelle());
+        etablissementMedecin.setType(etablissementMedecinDetails.getType()); // Champ "Type"
+        etablissementMedecin.setCle(etablissementMedecinDetails.getCle()); // Champ "Cle"
         etablissementMedecin.setDateAdhesion(etablissementMedecinDetails.getDateAdhesion());
         etablissementMedecin.setAdresseLocale(etablissementMedecinDetails.getAdresseLocale());
         etablissementMedecin.setConventionne(etablissementMedecinDetails.getConventionne());
         etablissementMedecin.setActif(etablissementMedecinDetails.getActif());
-        // Mettre à jour d'autres champs si nécessaire
+        
+        // Les autres champs restent inchangés
 
         final EtablissementMedecin updatedEtablissementMedecin = etablissementMedecinRepository.save(etablissementMedecin);
         return ResponseEntity.ok(updatedEtablissementMedecin);

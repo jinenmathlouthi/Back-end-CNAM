@@ -40,7 +40,7 @@ public class PrestationController {
         return new ResponseEntity<>(createdPrestation, HttpStatus.CREATED);
     }
 
-    @PutMapping("/prestation/{id}")
+    @PutMapping("/prestations/{id}")
     public ResponseEntity<Prestation> updatePrestation(@PathVariable(value = "id") Long prestationId,
                                                        @RequestBody Prestation prestationDetails) {
         Prestation prestation = prestationRepository.findById(prestationId).orElse(null);
@@ -48,10 +48,16 @@ public class PrestationController {
             return ResponseEntity.notFound().build();
         }
 
-        // Mettez à jour les propriétés de la prestation avec les détails de la requête
         prestation.setCode(prestationDetails.getCode());
         prestation.setLibelle(prestationDetails.getLibelle());
-        // Mettez à jour d'autres propriétés selon vos besoins
+        prestation.setUnite(prestationDetails.getUnite());
+        prestation.setPlafond(prestationDetails.getPlafond());
+        prestation.setMontant(prestationDetails.getMontant());
+        prestation.setPourcentage(prestationDetails.getPourcentage());
+        prestation.setRubrique(prestationDetails.getRubrique());
+        prestation.setFormule(prestationDetails.getFormule());
+        prestation.setRetraite(prestationDetails.getRetraite());
+        prestation.setActif(prestationDetails.getActif());
 
         final Prestation updatedPrestation = prestationRepository.save(prestation);
         return ResponseEntity.ok(updatedPrestation);

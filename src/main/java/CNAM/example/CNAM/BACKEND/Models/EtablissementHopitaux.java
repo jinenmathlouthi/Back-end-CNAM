@@ -4,8 +4,7 @@ import java.sql.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,9 +21,9 @@ import lombok.Setter;
 public class EtablissementHopitaux {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Code")
-    private Long code;
+    private Integer code;
 
     @Column(name = "Libelle")
     private String libelle;
@@ -32,13 +31,13 @@ public class EtablissementHopitaux {
     @Column(name = "DateAdhesion")
     private Date dateAdhesion;
 
-    @Column(name = "Type")
+    @Column(name = "Type", columnDefinition = "nvarchar(2)")
     private String type;
 
-    @Column(name = "Cle")
+    @Column(name = "Cle", columnDefinition = "nvarchar(2)")
     private String cle;
 
-    @Column(name = "Adresse_locale")
+    @Column(name = "Adresse_locale", columnDefinition = "nvarchar(2)")
     private String adresseLocale;
 
     @Column(name = "Conventionne")

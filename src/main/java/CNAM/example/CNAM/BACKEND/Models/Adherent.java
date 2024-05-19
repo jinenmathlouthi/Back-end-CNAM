@@ -4,8 +4,6 @@ import java.sql.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -21,9 +19,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Adherent {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   
     @Column(name = "Matricule")
-    private int matricule;
+    private long matricule;
 
     @Column(name = "IdentifiantCNSS")
     private String identifiantcnss;
@@ -107,10 +105,10 @@ public class Adherent {
     private Double anciensoldecnam;
 
     @Column(name = "CarteCNSS")
-    private String cartecnss;
+    private byte[] cartecnss;
 
     @Column(name = "Photo")
-    private String photo;
+    private byte[] photo;
 
     @Column(name = "Statut")
     private String statut;

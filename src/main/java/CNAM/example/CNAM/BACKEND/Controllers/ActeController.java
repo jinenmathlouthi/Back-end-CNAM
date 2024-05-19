@@ -27,11 +27,19 @@ public class ActeController {
     @GetMapping("/actes/{id}")
     public ResponseEntity<Acte> getActeById(@PathVariable(value = "id") String acteId) {
         Acte acte = acteRepository.findByCode(acteId);
+        if (acte == null) {
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok().body(acte);
     }
 
     @PostMapping("/actes")
-    public ResponseEntity<Acte> createActe(@RequestBody Acte acte) {
+    public ResponseEntity<?> createActe(@RequestBody Acte acte) {
+        Acte existingActe = acteRepository.findByCode(acte.getCode());
+        if (existingActe != null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("L'acte existe déjà.");
+        }
+
         Acte createdActe = acteRepository.save(acte);
         return new ResponseEntity<>(createdActe, HttpStatus.CREATED);
     }
@@ -49,7 +57,7 @@ public class ActeController {
         acte.setDesignation(acteDetails.getDesignation());
         acte.setCotation(acteDetails.getCotation());
         acte.setPrixunite(acteDetails.getPrixunite());
-        acte.setActif(acteDetails.getActif()); // Ajout de l'activation
+        acte.setActif(acteDetails.getActif());
 
         final Acte updatedActe = acteRepository.save(acte);
         return ResponseEntity.ok(updatedActe);

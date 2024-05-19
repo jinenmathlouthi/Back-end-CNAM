@@ -20,53 +20,53 @@ public class EtablissementHopitauxController {
     private EtablissementHopitauxRepository etablissementHopitauxRepository;
 
     @GetMapping("/etablissements")
-    public List<EtablissementHopitaux> getAllEtablissements() {
+    public List<EtablissementHopitaux> getAllEtablissementsHopitaux() {
         return etablissementHopitauxRepository.findAll();
     }
 
     @GetMapping("/etablissements/{code}")
-    public ResponseEntity<EtablissementHopitaux> getEtablissementById(@PathVariable(value = "code") Long code) {
-        EtablissementHopitaux etablissement = etablissementHopitauxRepository.findById(code).orElse(null);
-        if (etablissement == null) {
+    public ResponseEntity<EtablissementHopitaux> getEtablissementHopitauxByCode(@PathVariable Long code) {
+        EtablissementHopitaux etablissementHopitaux = etablissementHopitauxRepository.findByCode(code);
+        if (etablissementHopitaux == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok().body(etablissement);
+        return ResponseEntity.ok().body(etablissementHopitaux);
     }
 
     @PostMapping("/etablissements")
-    public ResponseEntity<EtablissementHopitaux> createEtablissement(@RequestBody EtablissementHopitaux etablissement) {
-        EtablissementHopitaux createdEtablissement = etablissementHopitauxRepository.save(etablissement);
-        return new ResponseEntity<>(createdEtablissement, HttpStatus.CREATED);
+    public ResponseEntity<EtablissementHopitaux> createEtablissementHopitaux(@RequestBody EtablissementHopitaux etablissementHopitaux) {
+        EtablissementHopitaux createdEtablissementHopitaux = etablissementHopitauxRepository.save(etablissementHopitaux);
+        return new ResponseEntity<>(createdEtablissementHopitaux, HttpStatus.CREATED);
     }
 
     @PutMapping("/etablissements/{code}")
-    public ResponseEntity<EtablissementHopitaux> updateEtablissement(@PathVariable(value = "code") Long code,
-                                                                     @RequestBody EtablissementHopitaux etablissementDetails) {
-        EtablissementHopitaux etablissement = etablissementHopitauxRepository.findById(code).orElse(null);
-        if (etablissement == null) {
+    public ResponseEntity<EtablissementHopitaux> updateEtablissementHopitaux(@PathVariable Long code,
+                                                                             @RequestBody EtablissementHopitaux etablissementHopitauxDetails) {
+        EtablissementHopitaux etablissementHopitaux = etablissementHopitauxRepository.findByCode(code);
+        if (etablissementHopitaux == null) {
             return ResponseEntity.notFound().build();
         }
 
-        etablissement.setLibelle(etablissementDetails.getLibelle());
-        etablissement.setDateAdhesion(etablissementDetails.getDateAdhesion());
-        etablissement.setType(etablissementDetails.getType());
-        etablissement.setCle(etablissementDetails.getCle());
-        etablissement.setAdresseLocale(etablissementDetails.getAdresseLocale());
-        etablissement.setConventionne(etablissementDetails.getConventionne());
-        etablissement.setActif(etablissementDetails.getActif());
+        etablissementHopitaux.setLibelle(etablissementHopitauxDetails.getLibelle());
+        etablissementHopitaux.setDateAdhesion(etablissementHopitauxDetails.getDateAdhesion());
+        etablissementHopitaux.setType(etablissementHopitauxDetails.getType());
+        etablissementHopitaux.setCle(etablissementHopitauxDetails.getCle());
+        etablissementHopitaux.setAdresseLocale(etablissementHopitauxDetails.getAdresseLocale());
+        etablissementHopitaux.setConventionne(etablissementHopitauxDetails.getConventionne());
+        etablissementHopitaux.setActif(etablissementHopitauxDetails.getActif());
 
-        final EtablissementHopitaux updatedEtablissement = etablissementHopitauxRepository.save(etablissement);
-        return ResponseEntity.ok(updatedEtablissement);
+        final EtablissementHopitaux updatedEtablissementHopitaux = etablissementHopitauxRepository.save(etablissementHopitaux);
+        return ResponseEntity.ok(updatedEtablissementHopitaux);
     }
 
     @DeleteMapping("/etablissements/{code}")
-    public ResponseEntity<Map<String, Boolean>> deleteEtablissement(@PathVariable(value = "code") Long code) {
-        EtablissementHopitaux etablissement = etablissementHopitauxRepository.findById(code).orElse(null);
-        if (etablissement == null) {
+    public ResponseEntity<Map<String, Boolean>> deleteEtablissementHopitaux(@PathVariable Long code) {
+        EtablissementHopitaux etablissementHopitaux = etablissementHopitauxRepository.findByCode(code);
+        if (etablissementHopitaux == null) {
             return ResponseEntity.notFound().build();
         }
 
-        etablissementHopitauxRepository.delete(etablissement);
+        etablissementHopitauxRepository.delete(etablissementHopitaux);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
