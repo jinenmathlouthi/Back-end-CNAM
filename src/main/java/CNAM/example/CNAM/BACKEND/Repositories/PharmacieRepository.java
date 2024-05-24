@@ -8,4 +8,5 @@ import CNAM.example.CNAM.BACKEND.Models.Pharmacie;
 @Repository
 public interface PharmacieRepository extends JpaRepository<Pharmacie, Long> {
     Pharmacie findByCode(Long code);
+    int countByConventionne(boolean conventionne);
 }

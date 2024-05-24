@@ -60,8 +60,8 @@ public class FactureController {
         facture.setFacturePharmaciesFactureCode(factureDetails.getFacturePharmaciesFactureCode());
         facture.setDocuments(factureDetails.getDocuments());
         facture.setMontantDepense(factureDetails.getMontantDepense());
-        facture.setAPayer(factureDetails.getAPayer());
-        facture.setARegler(factureDetails.getARegler());
+        facture.setApayer(factureDetails.getApayer());
+        facture.setAregler(factureDetails.getAregler());
         facture.setReste(factureDetails.getReste());
         facture.setDateArrive(factureDetails.getDateArrive());
         facture.setEtablissementCode(factureDetails.getEtablissementCode());

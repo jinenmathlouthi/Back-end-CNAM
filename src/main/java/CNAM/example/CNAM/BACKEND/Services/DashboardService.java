@@ -87,9 +87,10 @@ public class DashboardService {
     public int[] getAdherentsAffiliesMedecinsPharmaciesCount() {
         int adherentsCount = (int) adherentRepository.count();
         int affiliesCount = (int) affilieRepository.count();
-        int medecinsConventionnesCount = (int) etablissementMedecinRepository.count();
-        int pharmaciesConventionneesCount = (int) pharmacieRepository.count();
+        int medecinsConventionnesCount = (int) etablissementMedecinRepository.countByConventionne(true);
+        int pharmaciesConventionneesCount = (int) pharmacieRepository.countByConventionne(true);
         return new int[] { adherentsCount, affiliesCount, medecinsConventionnesCount, pharmaciesConventionneesCount };
     }
+    
 
 }

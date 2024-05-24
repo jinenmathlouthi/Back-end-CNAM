@@ -6,9 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import CNAM.example.CNAM.BACKEND.Models.Reglement;
 import CNAM.example.CNAM.BACKEND.Repositories.ReglementRepository;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 @CrossOrigin("*")
 @RestController

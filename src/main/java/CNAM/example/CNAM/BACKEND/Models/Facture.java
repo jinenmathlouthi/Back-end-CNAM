@@ -65,10 +65,10 @@ public class Facture {
     private Integer montantDepense;
 
     @Column(name = "A_Payer")
-    private Integer aPayer;
+    private Integer apayer;
 
     @Column(name = "A_Regler")
-    private Integer aRegler;
+    private Integer aregler;
 
     @Column(name = "Reste")
     private Integer reste;

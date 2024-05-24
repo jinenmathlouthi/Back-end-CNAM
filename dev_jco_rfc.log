@@ -1,0 +1,133 @@
+
+**** Log file opened at 20240522 114031 GMT+01:00 Rel. 3.1.7 (2022-12-14) [753.1110]
+Error:     >Wed May 22 11:40:31,570<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	connection parameters: TYPE=A DESTINATION=treakor_22_05_2024_11_40_10_460 ASHOST=10.1.5.44 SYSNR=01 SAPROUTER=/H/20.231.18.147/W/112233445566 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '20.231.18.147:3299' not reached
+TIME        Wed May 22 11:40:31 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3454
+DETAIL      NiPConnect2: 20.231.18.147:3299
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (RFC_FAILURE)
+	error group: RFC_ERROR_COMMUNICATION
+
+Error:     >Wed May 22 11:43:58,966<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	connection parameters: TYPE=A DESTINATION=treakor_22_05_2024_11_43_37_933 ASHOST=10.1.5.44 SYSNR=01 SAPROUTER=/H/20.231.18.147/W/112233445566 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '20.231.18.147:3299' not reached
+TIME        Wed May 22 11:43:58 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3454
+DETAIL      NiPConnect2: 20.231.18.147:3299
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (RFC_FAILURE)
+	error group: RFC_ERROR_COMMUNICATION
+
+Error:     >Wed May 22 11:44:54,194<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	connection parameters: TYPE=A DESTINATION=treakor_22_05_2024_11_44_33_135 ASHOST=10.1.5.44 SYSNR=01 SAPROUTER=/H/20.231.18.147/W/112233445566 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '20.231.18.147:3299' not reached
+TIME        Wed May 22 11:44:54 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3454
+DETAIL      NiPConnect2: 20.231.18.147:3299
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (RFC_FAILURE)
+	error group: RFC_ERROR_COMMUNICATION
+
+Error:     >Wed May 22 11:46:05,312<    RfcException raised by system [<unknown>]:
+	message: Connect to SAP gateway failed
+	connection parameters: TYPE=A DESTINATION=treakor_22_05_2024_11_45_38_977 ASHOST=10.1.5.44 SYSNR=01 SAPROUTER=/H/20.231.18.147/W/112233445566 PCS=1
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '20.231.18.147:3299' not reached
+TIME        Wed May 22 11:46:05 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        3454
+DETAIL      NiPConnect2: 20.231.18.147:3299
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+	return code: RFC_FAILURE (RFC_FAILURE)
+	error group: RFC_ERROR_COMMUNICATION
+
+
+**** Log file opened at 20240522 170429 GMT+01:00 Rel. 3.1.7 (2022-12-14) [753.1110]
+Error:     >Wed May 22 17:04:29,945<    >RfcGetException (rc=RFCGET_ERROR_READ) message: CPIC-CALL: CMRCV on convId: 99129315 with rc: 20
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '20.231.18.174:3299' broken
+TIME        Wed May 22 17:04:29 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        5434
+DETAIL      NiIRead: P=20.231.18.174:3299; L=10.94.142.9:58949
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     5
+
+<RfcGetException
+
+
+Error: [1]    >Wed May 22 17:04:29,957<    RfcException raised by system [Q4A|VMQ4A.sfbt.com.tn|01]:
+	message: CPIC-CALL: CMRCV on convId: 99129315 with rc: 20
+
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       connection to partner '20.231.18.174:3299' broken
+TIME        Wed May 22 17:04:29 2024
+RELEASE     753
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -6
+MODULE      D:/depot/bas/753_REL/src/base/ni/nixxi.cpp
+LINE        5434
+DETAIL      NiIRead: P=20.231.18.174:3299; L=10.94.142.9:58949
+SYSTEM CALL recv
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     5
+
+	return code: RFC_SYS_EXCEPTION (RFC_SYS_EXCEPTION)
+	error group: RFC_ERROR_COMMUNICATION
+

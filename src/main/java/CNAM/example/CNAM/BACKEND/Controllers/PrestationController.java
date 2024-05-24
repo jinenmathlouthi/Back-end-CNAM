@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import CNAM.example.CNAM.BACKEND.Models.Prestation;
 import CNAM.example.CNAM.BACKEND.Repositories.PrestationRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
@@ -37,7 +39,7 @@ public class PrestationController {
         return new ResponseEntity<>(createdPrestation, HttpStatus.CREATED);
     }
 
-<<<<<<< HEAD
+
     @PutMapping("/prestations/{id}")
     public ResponseEntity<Prestation> updatePrestation(@PathVariable(value = "id") Long prestationId,
                                                        @RequestBody Prestation prestationDetails) {
@@ -73,7 +75,5 @@ public class PrestationController {
         response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-=======
-    
->>>>>>> 5e9516f6812b6960cd172ee834884bd1634baa41
+
 }
