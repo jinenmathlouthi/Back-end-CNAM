@@ -27,4 +27,7 @@ private String Password;
 
 @Column(name = "Status")
 private String status;
+
+@Column(name="ProfilRecId")
+private Integer ProfilRecId;
 }

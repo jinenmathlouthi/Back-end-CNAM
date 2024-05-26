@@ -9,8 +9,7 @@ import CNAM.example.CNAM.BACKEND.Models.SuiviBordereau;
 import CNAM.example.CNAM.BACKEND.Repositories.SuiviBordereauRepository;
 
 import java.util.List;
-// import java.util.Map;
-// import java.util.HashMap;
+
 
 @CrossOrigin("*")
 @RestController
