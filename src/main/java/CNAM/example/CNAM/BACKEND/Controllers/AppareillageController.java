@@ -47,7 +47,6 @@ public class AppareillageController {
             return ResponseEntity.notFound().build();
         }
 
-        // Update appareillageDetails fields into appareillage
         appareillage.setLibelle(appareillageDetails.getLibelle());
         appareillage.setPrix(appareillageDetails.getPrix());
         appareillage.setActif(appareillageDetails.isActif());

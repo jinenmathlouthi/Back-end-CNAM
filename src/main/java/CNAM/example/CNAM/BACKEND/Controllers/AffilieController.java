@@ -47,31 +47,18 @@ public class AffilieController {
             return ResponseEntity.notFound().build();
         }
 
-        // Update affilie properties with affilieDetails
-        affilie.setCode(affilieDetails.getCode());
         affilie.setNom(affilieDetails.getNom());
         affilie.setPrenom(affilieDetails.getPrenom());
         affilie.setDatenaissance(affilieDetails.getDatenaissance());
-        affilie.setLienParente(affilieDetails.getLienParente());
+        affilie.setLienparente(affilieDetails.getLienparente());
         affilie.setRang(affilieDetails.getRang());
-        affilie.setIdentifiantCNSSConjoint(affilieDetails.getIdentifiantCNSSConjoint());
-        affilie.setFiliereConjoint(affilieDetails.getFiliereConjoint());
-        affilie.setPecCnamConjoint(affilieDetails.getPecCnamConjoint());
+        affilie.setIdentifiantcnssconjoint(affilieDetails.getIdentifiantcnssconjoint());
         affilie.setSexe(affilieDetails.getSexe());
         affilie.setAdherentMatricule(affilieDetails.getAdherentMatricule());
-        affilie.setACharge(affilieDetails.getACharge());
-        affilie.setAEtudiant(affilieDetails.getAEtudiant());
-        affilie.setAEndicape(affilieDetails.getAEndicape());
-        affilie.setAPrimaire(affilieDetails.getAPrimaire());
-        affilie.setASecondaire(affilieDetails.getASecondaire());
+        
         affilie.setActif(affilieDetails.getActif());
-        affilie.setCaisseAffiliation(affilieDetails.getCaisseAffiliation());
-        affilie.setSoldeAssurance(affilieDetails.getSoldeAssurance());
-        affilie.setAncienSoldeAssurance(affilieDetails.getAncienSoldeAssurance());
-        affilie.setPlafonneAssurance(affilieDetails.getPlafonneAssurance());
-        affilie.setAncienSoldeCNAM(affilieDetails.getAncienSoldeCNAM());
+        
         affilie.setApci(affilieDetails.getApci());
-        affilie.setMaladieCode(affilieDetails.getMaladieCode());
 
         final Affilie updatedAffilie = affilieRepository.save(affilie);
         return ResponseEntity.ok(updatedAffilie);
