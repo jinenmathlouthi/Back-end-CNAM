@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,7 @@ import CNAM.example.CNAM.BACKEND.Repositories.UtilisateurRepository;
 @Service
 public class DashboardService {
 
-  @Autowired
+    @Autowired
     private BulletinCnamRepository bulletinCnamRepository;
 
     @Autowired
@@ -57,21 +56,22 @@ public class DashboardService {
         return new int[] { usersConnected, usersNotConnected };
     }
 
- 
-   public int[] getFactureChartData() {
+    public int[] getFactureChartData() {
         List<Facture> factures = factureRepository.findAllByDateFinIsNotNull();
         int[] facturesParMois = new int[12]; 
 
         for (Facture facture : factures) {
-           
-            LocalDate dateFin = facture.getDateFin().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            int mois = dateFin.getMonthValue() - 1; 
-            facturesParMois[mois]++;
+            if (facture.getDateFin() != null) {
+                LocalDate dateFin = facture.getDateFin().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if (dateFin.getYear() == 2020) { 
+                    int mois = dateFin.getMonthValue() - 1; 
+                    facturesParMois[mois]++;
+                }
+            }
         }
 
         return facturesParMois;
     }
-
 
     public int[] getBulletinsCnamChartData() {
         int bulletinsCnamValides = bulletinCnamRepository.countByValide(true);
@@ -84,6 +84,7 @@ public class DashboardService {
         int bulletinsAssuranceNonValides = bulletinAssuranceRepository.countByValide(false);
         return new int[] { bulletinsAssuranceValides, bulletinsAssuranceNonValides };
     }
+
     public int[] getAdherentsAffiliesMedecinsPharmaciesCount() {
         int adherentsCount = (int) adherentRepository.count();
         int affiliesCount = (int) affilieRepository.count();
@@ -91,6 +92,4 @@ public class DashboardService {
         int pharmaciesConventionneesCount = (int) pharmacieRepository.countByConventionne(true);
         return new int[] { adherentsCount, affiliesCount, medecinsConventionnesCount, pharmaciesConventionneesCount };
     }
-    
-
 }

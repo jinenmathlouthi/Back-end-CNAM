@@ -55,15 +55,10 @@ public class FactureController {
         facture.setMontant(factureDetails.getMontant());
         facture.setActif(factureDetails.isActif());
         facture.setMontantRemb(factureDetails.getMontantRemb());
-        facture.setFactureEtablissementsFactureCode(factureDetails.getFactureEtablissementsFactureCode());
-        facture.setFactureMedecinsFactureCode(factureDetails.getFactureMedecinsFactureCode());
-        facture.setFacturePharmaciesFactureCode(factureDetails.getFacturePharmaciesFactureCode());
-        facture.setDocuments(factureDetails.getDocuments());
         facture.setMontantDepense(factureDetails.getMontantDepense());
         facture.setApayer(factureDetails.getApayer());
         facture.setAregler(factureDetails.getAregler());
         facture.setReste(factureDetails.getReste());
-        facture.setDateArrive(factureDetails.getDateArrive());
         facture.setEtablissementCode(factureDetails.getEtablissementCode());
         facture.setReglementCode(factureDetails.getReglementCode());
         facture.setNumFacture(factureDetails.getNumFacture());

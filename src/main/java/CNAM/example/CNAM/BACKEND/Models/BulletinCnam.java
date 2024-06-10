@@ -59,7 +59,9 @@ public class BulletinCnam {
     private Integer rang;
 
     @Column(name = "identifiantCnssAffilie")
-    private Integer identifiantCNSSAffilie;
+    private Integer 
+    identifiantCNSSAffilie
+    ;
 
     @Column(name = "filiereAffilie")
     private String filiereAffilie;

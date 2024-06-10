@@ -99,4 +99,13 @@ public class BulletinAssurance {
     
     @Column(name = "bulletin_soin_num")
     private Long bulletinSoinNum;
+    
+    @Column(name = "pharmacie")
+    private Integer pharmacie;
+
+    @Column(name = "acte")
+    private Double acte;
+
+    @Column(name = "appareillage")
+    private Double appareillage;
 }

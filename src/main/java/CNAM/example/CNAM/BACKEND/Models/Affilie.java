@@ -24,8 +24,7 @@ public class Affilie {
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Code")
     private Integer code;
- <
-    @Column(name = "Nom")
+     @Column(name = "Nom")
     private String nom;
 
     @Column(name = "Prénom")
